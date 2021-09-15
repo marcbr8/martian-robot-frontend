@@ -11,6 +11,7 @@ and the open the browser
 ```
 http://localhost:3000
 ```
+There is a ```.env``` file where you can change the endpoint. For example to ```http://localhost:8080/robot``` in case you want to use your local backend
 
 # How it works
 
