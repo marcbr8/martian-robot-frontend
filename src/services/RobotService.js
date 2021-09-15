@@ -1,7 +1,7 @@
 import axios from 'axios';
 
-const ROBOT_API_BASE_URL = "https://tranquil-cove-41891.herokuapp.com/robot"
-const ROBOT_API_BASE_URL_CALCULATE = "https://tranquil-cove-41891.herokuapp.com/robot/calculate"
+const ROBOT_API_BASE_URL = process.env.REACT_APP_ROBOT_API_BASE_URL
+const ROBOT_API_BASE_URL_CALCULATE = process.env.REACT_APP_ROBOT_API_BASE_URL_CALCULATE
 
 
 class RobotService {
