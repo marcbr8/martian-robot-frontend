@@ -6,6 +6,7 @@ import GridService from '../services/GridService'
 		constructor(props){
 			super(props)
 			this.state = {
+				submitted : false,
 				marsGrid : {
 					boundaries : {
 						x : 0,
@@ -39,6 +40,9 @@ import GridService from '../services/GridService'
 
 		submitGrid(){
 			this.props.funcSubmitMarsGrid(this.state.marsGrid);
+			this.setState({
+				submitted : true
+			})
 		}
 
 		clearGrids() {
@@ -60,6 +64,22 @@ import GridService from '../services/GridService'
 			}
 			
 			return row
+		}
+
+		submitted () {
+			if(this.state.submitted){
+			return (
+					<div className="container">
+						<div className="row  justify-content-center">
+							<div className="col-5 alert-success">
+								<p className = "text-center text-success">
+								{this.state.submitted ? 'Grid submitted' :'' }
+								</p>
+							</div>
+						</div>
+					</div>
+					);
+			}
 		}
 
 		render () {
@@ -119,6 +139,7 @@ import GridService from '../services/GridService'
 								<button onClick = { () => this.clearGrids() }type="button" className="btn btn-danger">Clear all stored grids</button>
 							</div>
 						</div>
+						{this.submitted()}
 					</div>
 				</div>
 				)
