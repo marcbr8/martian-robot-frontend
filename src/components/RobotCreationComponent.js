@@ -19,9 +19,7 @@ import RobotService from '../services/RobotService'
 		}
 
 		componentDidMount(){
-			
 			RobotService.clearAllRobots();
-
 		}
 
 		defineXforRobot(a){
@@ -81,6 +79,26 @@ import RobotService from '../services/RobotService'
 		}
 
 
+		createDropdownsForX () {
+			var row = []
+				for (let i=0; i < 11; i ++){
+					row.push(<button key={i} onClick = { () => this.defineXforRobot(i) } className="dropdown-item" >{i}</button>)
+				}
+			
+			return row
+
+		}
+
+		createDropdownsForY () {
+			var row = []
+				for (let i=0; i < 11; i ++){
+					row.push(<button key={i} onClick = { () => this.defineYforRobot(i) } className="dropdown-item" >{i}</button>)
+				}
+			
+			return row
+
+		}
+
 		submitted () {
 			if(this.state.submitted){
 			return (
@@ -137,17 +155,7 @@ import RobotService from '../services/RobotService'
 											    {this.state.robot.coordinates.x}
 											  </button>
 											  <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
-												<button onClick = { () => this.defineXforRobot(0) } className="dropdown-item" >0</button>
-											    <button onClick = { () => this.defineXforRobot(1) } className="dropdown-item" >1</button>
-											    <button onClick = { () => this.defineXforRobot(2) } className="dropdown-item" >2</button>
-											    <button onClick = { () => this.defineXforRobot(3) } className="dropdown-item" >3</button>
-											    <button onClick = { () => this.defineXforRobot(4) } className="dropdown-item" >4</button>
-											    <button onClick = { () => this.defineXforRobot(5) } className="dropdown-item" >5</button>
-											    <button onClick = { () => this.defineXforRobot(6) } className="dropdown-item" >6</button>
-											    <button onClick = { () => this.defineXforRobot(7) } className="dropdown-item" >7</button>
-											    <button onClick = { () => this.defineXforRobot(8) } className="dropdown-item" >8</button>
-											    <button onClick = { () => this.defineXforRobot(9) } className="dropdown-item" >9</button>
-											    <button onClick = { () => this.defineXforRobot(10) } className="dropdown-item" >10</button>
+												{this.createDropdownsForX()}
 											  </div>
 											</div>
 										</div>
@@ -168,19 +176,9 @@ import RobotService from '../services/RobotService'
 											    {this.state.robot.coordinates.y ? this.state.robot.coordinates.y : '0'}
 											  </button>
 											  <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
-												<button onClick = { () => this.defineYforRobot(0) } className="dropdown-item" >0</button>											  
-											    <button onClick = { () => this.defineYforRobot(1) } className="dropdown-item" >1</button>
-											    <button onClick = { () => this.defineYforRobot(2) } className="dropdown-item" >2</button>
-											    <button onClick = { () => this.defineYforRobot(3) } className="dropdown-item" >3</button>
-											    <button onClick = { () => this.defineYforRobot(4) } className="dropdown-item" >4</button>
-											    <button onClick = { () => this.defineYforRobot(5) } className="dropdown-item" >5</button>
-											    <button onClick = { () => this.defineYforRobot(6) } className="dropdown-item" >6</button>
-											    <button onClick = { () => this.defineYforRobot(7) } className="dropdown-item" >7</button>
-											    <button onClick = { () => this.defineYforRobot(8) } className="dropdown-item" >8</button>
-											    <button onClick = { () => this.defineYforRobot(9) } className="dropdown-item" >9</button>
-											    <button onClick = { () => this.defineYforRobot(10) } className="dropdown-item" >10</button>
+												{this.createDropdownsForY()}
 											  </div>
-											</div>
+											  </div>
 										</div>
 									</div>
 								</div>
