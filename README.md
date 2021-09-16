@@ -1,6 +1,8 @@
 # What is this
 
-This is a react app written to be used along with the martian-robot application. It is deployed [in heroku](https://martian-robot-frontend-app.herokuapp.com/)
+This is a react app written to be used along with the martian-robot application.
+
+This is my first react app. I learned how to use this framework these days while doing this code challenge. It is deployed [in heroku](https://martian-robot-frontend-app.herokuapp.com/)
 
 To run it locally, clone this repo and navigate to it. Then simply
 
